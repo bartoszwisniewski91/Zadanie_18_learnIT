@@ -1,0 +1,14 @@
+---
+- name: Instalacja MariaDB
+  apt: name=mariadb-server state=present
+- name: Uruchomienie usługi MySQL
+  service: name=mysql state=started enabled=yes
+- name: Utworzenie bazy danych
+  mysql_db: name={{ db_name }} state=present login_unix_socket=/var/run/mysqld/mysqld.sock
+- name: Utworzenie użytkownika bazy danych
+  mysql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    priv: "{{ db_name }}.*:ALL"
+    state: present
+    login_unix_socket: /var/run/mysqld/mysqld.sock

@@ -1,0 +1,10 @@
+---
+- name: Wdrożenie środowiska LAMP
+  hosts: webservers
+  become: yes
+  roles:
+    - base
+    - database
+    - web
+    - php
+    - app

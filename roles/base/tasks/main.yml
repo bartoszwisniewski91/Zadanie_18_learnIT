@@ -1,0 +1,6 @@
+---
+- name: Aktualizacja cache apt
+  apt: update_cache=yes cache_valid_time=3600
+- name: Instalacja podstawowych paczek
+  apt: name={{ item }} state=present
+  loop: ['curl', 'vim', 'git', 'python3-pymysql']

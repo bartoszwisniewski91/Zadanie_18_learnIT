@@ -1,0 +1,7 @@
+---
+- name: Wdrożenie pliku index.php z szablonu
+  template:
+    src: index.php.j2
+    dest: /var/www/html/index.php
+- name: Usunięcie domyślnego pliku index.html
+  file: path=/var/www/html/index.html state=absent

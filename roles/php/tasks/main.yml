@@ -1,0 +1,5 @@
+---
+- name: Instalacja PHP i modułów
+  apt: name={{ item }} state=present
+  loop: ['php', 'libapache2-mod-php', 'php-mysql']
+  notify: restart apache

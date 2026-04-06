@@ -1,0 +1,6 @@
+<?php
+$conn = new mysqli("localhost", "{{ db_user }}", "{{ db_password }}", "{{ db_name }}");
+if ($conn->connect_error) { die("Połączenie nieudane: " . $conn->connect_error); }
+echo "<h1>Serwer LAMP działa!</h1>";
+echo "Połączono pomyślnie z bazą danych: <b>{{ db_name }}</b>";
+?>
