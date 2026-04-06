@@ -17,4 +17,4 @@ Możesz zmienić dane logowania do bazy danych w pliku `roles/database/defaults/
 2. Edytuj plik `inventory.ini`, wpisując adres IP serwera docelowego.
 3. Uruchom playbook komendą:
    ```bash
-   ansible-playbook -i inventory.ini site.yml# Zadanie_18_learnIT
+   ansible-playbook -i inventory.ini site.yml
